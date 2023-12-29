@@ -12,6 +12,7 @@
   "types": "./graphql.d.ts",
   "dependencies": {
     "apollo-server-lambda": "^3.13.0",
+    "aws-sdk": "^2.1527.0",
     "graphql": "^16.8.1"
   }
 }
