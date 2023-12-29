@@ -7,13 +7,17 @@ export const typeDefs = gql`
     ecoActions: [String]
   }
 `;
+
+// TODO: #2 Extract userId from Auth token or similar
+const getUserId = () => '123';
+
 const getEcoActionsFromDDB = async () => {
-  // Query data from DynamoDB
   const dynamoDB = new DynamoDB.DocumentClient();
+  const userId = await getUserId()
   const params = {
     TableName: process.env.ACTIONS_TABLE_NAME || '', // Use the table name from environment variables
     Key: {
-      itemId: '123', // Provide the specific key to query
+      userId,
     },
   };
 
@@ -31,5 +35,6 @@ export const resolvers = {
     Query: {
         ecoActions: () => getEcoActionsFromDDB(),
     },
+    // TODO: #3 add a mutation which logs an action
 };
 

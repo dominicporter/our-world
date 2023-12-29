@@ -9,8 +9,8 @@ export class OurWorldApiStack extends cdk.Stack {
     super(scope, id, props);
 
     const ecoActionsTable = new dynamodb.Table(this, 'OurWorldEcoActions', {
-      partitionKey: { name: 'itemId', type: dynamodb.AttributeType.STRING },
-      removalPolicy: cdk.RemovalPolicy.DESTROY, // Change as needed for your use case
+      partitionKey: { name: 'userId', type: dynamodb.AttributeType.STRING },
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
     });
 
     const ourWorldApi = new lambda.Function(this, 'ourWorldApi', {
