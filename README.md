@@ -1,6 +1,13 @@
-# Welcome to your CDK TypeScript project
+# Our World API
 
-This is a blank project for CDK development with TypeScript.
+This is an Apollo Server based GraphQL API which is deployed to an AWS Lambda and DynamoDB table using CDK. 
+
+In summary:
+
+- `npm i` in top level and lambda dirs
+- `npm run build`
+- `npx cdk deploy` (having set up your AWS creds)
+
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
